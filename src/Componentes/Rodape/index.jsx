@@ -1,20 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import * as S from './style.js';
 import { Instagram, Linkedin, Whatsapp } from 'react-bootstrap-icons';
 import LogoSrc1 from '../../assets/logo-1.png'
 
 const Rodape = () => {
-  const [anoAtual, setAnoAtual] = useState(new Date().getFullYear());
+  const anoAtual = new Date().getFullYear();
 
   const socials = [
     {id: 'instagram', Icon: Instagram, href: 'https://www.instagram.com/brav.owear/'},
     {id: 'linkedin', Icon: Linkedin, href: 'https://www.linkedin.com/in/willian-miranda-de-oliveira-7195642ba/'},
     {id: 'whatsapp', Icon: Whatsapp, href: 'https://wa.me/5527997916541'},
   ];
-
-  useEffect(() => {
-    setAnoAtual(new Date().getFullYear());
-  }, []);
 
   return (
     <S.Footer>

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  padding: 3rem 1rem 5.5rem 1rem;
-  max-width: 1200px;
+  padding: 3rem 6rem 5.5rem 6rem;
   margin: 0 auto;
+  background-color: #fff;
 `;
 
 export const Title = styled.h2`

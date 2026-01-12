@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  background: #f2f2f2; /* fundo solicitado */
+  background: #f2f2f2;
   padding: 5rem 1rem;
 `;
 
@@ -23,7 +23,7 @@ export const Left = styled.div`
 `;
 
 export const Right = styled.div`
-  width: 330px; /* largura solicitada */
+  width: 330px;
 `;
 
 export const Title = styled.h2`
@@ -70,6 +70,12 @@ export const Textarea = styled.textarea`
   resize: vertical;
 `;
 
+export const HelpText = styled.small`
+  color: var(--muted, #666);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+`;
+
 export const Button = styled.button`
   margin-top: 0.25rem;
   padding: 0.6rem 0.75rem;
@@ -87,4 +93,21 @@ export const Button = styled.button`
     background: #095bb7;
     outline: none;
   }
+`;
+
+export const WhatsappLink = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  color: #25D366;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    color: #128C7E;
+  }
+
 `;

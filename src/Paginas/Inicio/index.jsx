@@ -1,40 +1,35 @@
 import React from "react";
-import Perfil1 from "../../Assets/perfil-1.JPG"
+import Perfil1 from "../../assets/perfil-1.jpg"
 import * as S from "./style"
-
+import CardsServicos from "../../Componentes/CardsServicos";
+import Diferenciais from "../../Componentes/Diferenciais";
+import Banner from "../../Componentes/Banner";
+import Contratar from "../../Componentes/Contratar";
+import Depoimento from "../../Componentes/Depoimento";
+import Conexao from "../../Componentes/Conexao";
+import Desde from "../../Componentes/Desde";
+import Formulario from "../../Componentes/Formulario";
 
 const Inicio = () => {
     return (
         <S.Wrapper>
-            {/* Seção de apresentação */}
-            <S.SectionPresentation>
-
-                <S.Content>
-                    <S.Title>Weligton – Consultoria Administrativa e RH</S.Title>
-                    
-                    <S.Text>
-                        Somos o apoio estratégico que a sua empresa precisa para crescer 
-                        com consistência e sustentabilidade. Atuamos de forma autônoma e personalizada, 
-                        oferecendo soluções sob medida para organizações que buscam eficiência, 
-                        desempenho e alinhamento estratégico de suas equipes.
-                        Nossa atuação é baseada em diagnóstico preciso, planejamento estruturado e 
-                        execução orientada a resultados, contribuindo diretamente para a evolução dos 
-                        processos, das pessoas e do negócio.
-                    </S.Text>
-                </S.Content>
-            </S.SectionPresentation>
+            <Banner />
+            <CardsServicos />
+            <Diferenciais />
 
 
             {/* Seção de chamada de atenção */}
             <S.Section >
                 <S.Content>
-                    <S.Title>Nosso Compromisso</S.Title>
+                    <S.Title>
+                        Estamos constantemente inovando e 
+                        aprimorando nossos serviços
+                    </S.Title>
 
                     <S.Text>
-                        Acreditamos que resultados consistentes são construídos a partir de pessoas 
-                        bem direcionadas, processos eficientes e estratégias claras. Nosso compromisso 
-                        é apoiar sua empresa na construção de uma gestão mais profissional, produtiva e 
-                        preparada para os desafios do mercado.
+                        Utilizamos as mais recentes tecnologias e 
+                        ferramentas de RH para otimizar processos e 
+                        garantir resultados precisos e rápidos.
                     </S.Text>
                     <S.Button>Tire suas dúvidas</S.Button>
                 </S.Content>
@@ -43,6 +38,12 @@ const Inicio = () => {
                     <S.Image src={Perfil1} alt="Foto de Perfil - direita" />
                 </S.ImageWrapper>
             </S.Section>
+
+            <Contratar />
+            <Depoimento />
+            <Conexao />
+            <Desde />
+            <Formulario />
 
         </S.Wrapper>
     )

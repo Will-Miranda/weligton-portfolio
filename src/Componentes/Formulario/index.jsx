@@ -5,12 +5,17 @@ import { Whatsapp } from 'react-bootstrap-icons';
 const Formulario = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aqui você pode integrar envio para API, e-mail ou serviço de backend
-    alert('Mensagem enviada (simulada)');
+    const formData = new FormData(e.target);
+    const email = formData.get('email');
+    const message = formData.get('message');
+    
+    // Integração futura com API/service
+    console.log('Form data:', { email, message });
+    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
   };
 
   return (
-    <S.Section>
+    <S.Section id="contato">
       <S.Container>
         <S.Left>
           <S.Title>Como Podemos te Ajudar</S.Title>
@@ -20,18 +25,41 @@ const Formulario = () => {
           <S.Form onSubmit={handleSubmit}>
             <S.Field>
               <S.Label htmlFor="email">E-mail:</S.Label>
-              <S.Input id="email" type="email" placeholder="Digite aqui seu E-mail" required />
+              <S.Input 
+                id="email" 
+                name="email"
+                type="email" 
+                placeholder="seu@email.com" 
+                required 
+                aria-describedby="email-help"
+              />
+              <S.HelpText id="email-help">Seu e-mail será usado apenas para resposta</S.HelpText>
             </S.Field>
 
             <S.Field>
               <S.Label htmlFor="message">Mensagem:</S.Label>
-              <S.Textarea id="message" rows={5} placeholder="Mensagem" />
+              <S.Textarea 
+                id="message" 
+                name="message"
+                rows={5} 
+                placeholder="Digite sua mensagem aqui..."
+                required
+                aria-describedby="message-help"
+              />
+              <S.HelpText id="message-help">Descreva como podemos ajudar você</S.HelpText>
             </S.Field>
 
-            <S.Button type="submit">Send</S.Button>
-
-            <Whatsapp size={36} style={{ marginTop: '1rem', color: '#25D366', cursor: 'pointer' }} aria-hidden />
+            <S.Button type="submit">Enviar Mensagem</S.Button>
           </S.Form>
+
+          <S.WhatsappLink 
+            href="https://wa.me/5527997916541" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Contato via WhatsApp"
+          >
+            <Whatsapp size={32} />
+          </S.WhatsappLink>
         </S.Right>
       </S.Container>
     </S.Section>

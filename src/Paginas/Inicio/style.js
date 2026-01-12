@@ -1,73 +1,45 @@
 // ...existing code...
-import styled, { keyframes } from "styled-components";
-import FundoApr from "../../assets/fundo-perfil.png"
-
-const float = keyframes`
-    0%{ transform: translateY(0); }
-    50%{ transform: translateY(-6px); }
-    100%{ transform: translateY(0); }
-`;
+import styled from "styled-components";
 
 export const Wrapper = styled.main`
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    background:  #c3c3cdba;
+
 `;
-
-export const SectionPresentation = styled.section`
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: end;
-    padding-right: 4rem;
-    background-image: url(${FundoApr});
-    background-size: fill;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 70vh;
-
-    @media (max-width: 768px) {
-        flex-direction: column;
-        text-align: center;
-    }
-`
 
 export const Section = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 7rem;
-    gap: 28px;
+    margin-left: 10rem;
+    padding-left: 3rem ;
+    gap: 2rem;
 
     @media (max-width: 768px) {
         flex-direction: column;
         text-align: center;
+        padding-left: 0;
+        margin-left: 0;
     }
 `;
 
 export const ImageWrapper = styled.figure`
-    width: 320px;
-    max-width: 40%;
-    perspective: 1000px; /* Cria sensação 3D */
-    justify-content: flex-end;
+    width: 500px;
 
     @media (max-width: 768px) {
         width: 220px;
-        max-width: 80%;
+        max-width: 100%;
         margin: 0 auto;
     }
 `;
 
 export const Image = styled.img`
     width: 100%;
-    height: 80%;
-    display: block;
-    transform-style: preserve-3d;
-    animation: ${float} 3s ease-in-out infinite;
+        display: block;
 
-    @media (prefers-reduced-motion: reduce) {
-        animation: none;
-        transition: none;
+    @media (max-width: 768px) {
+        transform: none;
     }
 `;
 
@@ -75,20 +47,31 @@ export const Content = styled.div`
     max-width: 720px;
     display: flex;
     flex-direction: column;
+    padding: 2rem 3rem;
     gap: 12px;
     color: #000;
+
 `;
 
 export const Title = styled.h3`
     margin-bottom: 1.2rem;
     font-size: 2em;
     font-weight: 700;
+
+    @media (max-width: 768px) {
+        font-size: 1.3em;
+    }
 `;
 
 export const Text = styled.p`
     margin: 0;
     line-height: 1.5;
     font-size: 1.1em;
+    max-width: 440px;
+    
+    @media (max-width: 768px) {
+        font-size: 1em;
+    }
 `;
 
 export const Button = styled.button`
