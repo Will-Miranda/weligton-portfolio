@@ -14,16 +14,37 @@ export default createGlobalStyle`
         font-weight: 400;
     }
 
-    body {
+    html, body {
         height: 100%;
-        font-family: "Sensation";
+        margin: 0;
+        padding: 0;
+        font-family: "Sensation", Arial, sans-serif;
+        background-color: #ffffff;
+        color: #333333;
+    }
+
+    #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 
     a {
         text-decoration: none;
+        color: inherit;
     }
 
     ul, nav {
         list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    button {
+        font-family: inherit;
+    }
+
+    input, textarea {
+        font-family: inherit;
     }
 `
