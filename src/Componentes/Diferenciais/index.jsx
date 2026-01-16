@@ -51,9 +51,9 @@ const Diferenciais = () => {
       <S.Inner>
         <S.Title>Diferenciais</S.Title>
         <S.Description>
-          A Weligton é uma consultoria formada por profissionais altamente experientes, o que garante uma atuação sólida, objetiva e com
+          A WM é uma empresa de consultoria formada por um profissional altamente experiente, o que garante uma atuação sólida, objetiva e com
           uma visão ampla para identificar as necessidades reais do seu negócio. Nosso compromisso é entregar soluções estratégicas, inovadoras e
-          realmente eficazes sempre indo além do esperado. Trabalhamos para transformar a gestão de pessoas em uma força competitiva, capaz de
+          realmente eficazes sempre indo além do esperado. Trabalha para transformar a gestão de pessoas em uma força competitiva, capaz de
           impulsionar resultados e fortalecer a performance das organizações que confiam em nosso trabalho.
         </S.Description>
 

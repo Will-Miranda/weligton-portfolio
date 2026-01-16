@@ -19,13 +19,6 @@ const CardsServicos = () => {
       ),
     },
     {
-      id: 2, // segundo card
-      title: 'Consultoria de RH', // título do serviço
-      color: '#ff8c42', // cor laranja para o ícone/borda
-      icon: (
-        <Pencil aria-hidden />),
-    },
-    {
       id: 3, // terceiro card
       title: 'Treinamentos e Palestras', // título do serviço
       color: '#7be495', // cor verde claro para o ícone/borda
@@ -43,10 +36,19 @@ const CardsServicos = () => {
     },
   ];
 
+  // Função que abre o WhatsApp com a mensagem pré-definida
+  const handleClick = (messageTitle) => {
+    const message = `Olá, gostaria de saber mais sobre seus serviços de ${messageTitle}!`;
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Abre o WhatsApp com a mensagem pré-definida
+    window.open(`https://wa.me/5527997916541?text=${encodedMessage}`, '_blank');
+  };
+
   // Retorna o JSX que será renderizado na tela
   return (
     // Componente styled que envolve toda a seção de serviços
-    <S.Container>
+    <S.Container id='servicos'>
       {/* Título da seção */}
       <S.Title>Nossos Serviços</S.Title>
 
@@ -67,7 +69,11 @@ const CardsServicos = () => {
 
 
             {/* Botão de ação do card */}
-            <S.CardButton type="button">Saiba Mais...</S.CardButton>    
+            <S.CardButton 
+            type="button" 
+            onClick={() => handleClick(card.title)}
+            aria-label="Saiba mais sobre este serviço"
+            >Saiba Mais...</S.CardButton>    
           </S.Card>
         ))}
       </S.Grid>

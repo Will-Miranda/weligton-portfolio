@@ -8,7 +8,7 @@ const Cabecalho = ({ items = null, logoSrc = LogoSrc }) => {
         { id: 'sobre', label: 'Sobre', href: '#sobre' },
         { id: 'servicos', label: 'Serviços', href: '#servicos' },
         { id: 'contato', label: 'Contato', href: '#contato' },
-        { id: 'conversa', label: 'Conversar com Consultor', href: '#conversa' }
+        { id: 'conversa', label: 'Conversar com Consultor', href: '#conversa', className: 'consultor' }
     ];
 
     const navItems = items || defaultItems;
@@ -40,7 +40,7 @@ const Cabecalho = ({ items = null, logoSrc = LogoSrc }) => {
                 <NavList>
                     {navItems.map(item => (
                     <li key={item.id}>
-                        <a href={item.href}>{item.label}</a>
+                        <a href={item.href} className={item.className}>{item.label}</a>
                     </li>
                     ))}                
                 </NavList>

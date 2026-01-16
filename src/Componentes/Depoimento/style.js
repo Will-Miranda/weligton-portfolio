@@ -48,8 +48,9 @@ export const CarouselContent = styled.div`
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     width: 100%;
-
-    @media (max-width: 768px) {
+    
+    /* Mobile: 1 card */
+    @media (max-width: 480px) {
         grid-template-columns: 1fr;
     }
 `;
@@ -67,6 +68,7 @@ export const DepoimentoCard = styled.div`
     max-width: 350px;
     width: 100%;
     position: relative;
+
 `;
 
 export const Foto = styled.img`

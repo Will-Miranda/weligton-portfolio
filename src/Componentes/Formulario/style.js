@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   background: #f2f2f2;
-  padding: 5rem 1rem;
 `;
 
 export const Container = styled.div`
   max-width: 880px;
+  min-height: 70vh;
   margin: 0 auto;
   display: flex;
   align-items: center;

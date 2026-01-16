@@ -15,7 +15,7 @@ export const Title = styled.h2`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 
   @media (max-width: 1024px) {
@@ -87,8 +87,7 @@ export const CardButton = styled.button`
   cursor: pointer;
   transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease;
 
-  &:hover,
-  &:focus {
+  &:hover{
     background: var(--primary, #0b74de);
     color: #fff;
     transform: translateY(-2px);

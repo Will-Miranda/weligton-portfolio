@@ -6,12 +6,18 @@ const Formulario = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
+    const name = formData.get('name');
     const email = formData.get('email');
     const message = formData.get('message');
     
-    // Integração futura com API/service
-    console.log('Form data:', { email, message });
-    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+    // Montar mensagem formatada para WhatsApp
+    const whatsappMessage = `Novo contato pelo site\n\nNome: ${name}\nEmail: ${email}\nMensagem:\n${message}`;
+    
+    // Construir URL do WhatsApp com mensagem codificada
+    const whatsappUrl = `https://wa.me/5527997916541?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    // Abrir WhatsApp em nova aba
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -23,6 +29,19 @@ const Formulario = () => {
 
         <S.Right>
           <S.Form onSubmit={handleSubmit}>
+            <S.Field>
+              <S.Label htmlFor="name">Nome:</S.Label>
+              <S.Input 
+                id="name" 
+                name="name"
+                type="text" 
+                placeholder="Seu nome" 
+                required 
+                aria-describedby="name-help"
+              />
+              <S.HelpText id="name-help">Seu nome para identificação</S.HelpText>
+            </S.Field>
+
             <S.Field>
               <S.Label htmlFor="email">E-mail:</S.Label>
               <S.Input 
@@ -49,7 +68,8 @@ const Formulario = () => {
               <S.HelpText id="message-help">Descreva como podemos ajudar você</S.HelpText>
             </S.Field>
 
-            <S.Button type="submit">Enviar Mensagem</S.Button>
+            <S.Button 
+            type="submit">Enviar Mensagem</S.Button>
           </S.Form>
 
           <S.WhatsappLink 

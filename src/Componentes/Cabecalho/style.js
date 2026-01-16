@@ -7,9 +7,7 @@ export const Container = styled.header`
   justify-content: space-between;
   padding: 0 6rem;
   background: var(--background, #ffffff);
-  position: sticky;
   top: 0;
-  z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 `;
 
@@ -58,6 +56,15 @@ export const NavItens = styled.nav`
 li[data-id="conversa"] a {
   color: var(--primary, #1582eeff);
   font-weight: 600;
+}
+
+.consultor {
+  color: #2f86ddd5;
+  font-weight: 600;
+
+  &:hover {
+    color: #044c95;
+  }
 }
 
 /* preserva estado de foco/hover */
