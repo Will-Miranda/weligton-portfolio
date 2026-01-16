@@ -193,6 +193,7 @@ li[data-id="conversa"] a:focus {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;const Rr=hr.div`
     display: flex;
     justify-content: flex-end;
