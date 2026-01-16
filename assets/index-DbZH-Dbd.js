@@ -242,6 +242,7 @@ li[data-id="conversa"] a:focus {
   padding: 3rem 6rem 5.5rem 6rem;
   margin: 0 auto;
   background-color: #fff;
+  overflow: hidden;
 `,Fr=hr.h2`
   font-size: 2rem;
   margin-bottom: 3rem;
