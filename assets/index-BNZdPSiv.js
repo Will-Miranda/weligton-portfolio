@@ -843,6 +843,7 @@ li[data-id="conversa"] a:focus {
   max-width: 880px;
   min-height: 70vh;
   margin: 0 auto;
+  padding: 1.3rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
