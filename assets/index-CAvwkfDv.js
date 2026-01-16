@@ -150,7 +150,7 @@ li[data-id="conversa"] a:focus {
       padding: 0.5rem 0;
     }
   }
-`;var Sr=k(),Cr=({items:e=null,logoSrc:t="/weligton-portfolio/assets/logo-Dhac88re.png"})=>{const r=e||[{id:"inicio",label:"Início",href:"#inicio"},{id:"sobre",label:"Sobre",href:"#sobre"},{id:"servicos",label:"Serviços",href:"#servicos"},{id:"contato",label:"Contato",href:"#contato"},{id:"conversa",label:"Conversar com Consultor",href:"#conversa",className:"consultor"}],[n,a]=(0,ze.useState)(!1);return(0,ze.useEffect)(()=>{const e=()=>{window.innerWidth>768&&a(!1)};return window.addEventListener("resize",e),()=>window.removeEventListener("resize",e)},[]),(0,Sr.jsxs)(vr,{children:[(0,Sr.jsx)(br,{src:t,alt:"Logo Weligton Consultoria"}),(0,Sr.jsxs)(yr,{onClick:()=>a(e=>!e),"aria-expanded":n,"aria-label":n?"Fechar menu":"Abrir menu",children:[(0,Sr.jsx)("span",{}),(0,Sr.jsx)("span",{}),(0,Sr.jsx)("span",{})]}),(0,Sr.jsx)(wr,{open:n,role:"navigation","aria-label":"Navegação principal",children:(0,Sr.jsx)(jr,{children:r.map(e=>(0,Sr.jsx)("li",{children:(0,Sr.jsx)("a",{href:e.href,className:e.className,children:e.label})},e.id))})})]})};const kr=hr.footer`
+`;var Sr=k(),Cr=({items:e=null,logoSrc:t="/wm-consultoria/assets/logo-Dhac88re.png"})=>{const r=e||[{id:"inicio",label:"Início",href:"#inicio"},{id:"sobre",label:"Sobre",href:"#sobre"},{id:"servicos",label:"Serviços",href:"#servicos"},{id:"contato",label:"Contato",href:"#contato"},{id:"conversa",label:"Conversar com Consultor",href:"#conversa",className:"consultor"}],[n,a]=(0,ze.useState)(!1);return(0,ze.useEffect)(()=>{const e=()=>{window.innerWidth>768&&a(!1)};return window.addEventListener("resize",e),()=>window.removeEventListener("resize",e)},[]),(0,Sr.jsxs)(vr,{children:[(0,Sr.jsx)(br,{src:t,alt:"Logo Weligton Consultoria"}),(0,Sr.jsxs)(yr,{onClick:()=>a(e=>!e),"aria-expanded":n,"aria-label":n?"Fechar menu":"Abrir menu",children:[(0,Sr.jsx)("span",{}),(0,Sr.jsx)("span",{}),(0,Sr.jsx)("span",{})]}),(0,Sr.jsx)(wr,{open:n,role:"navigation","aria-label":"Navegação principal",children:(0,Sr.jsx)(jr,{children:r.map(e=>(0,Sr.jsx)("li",{children:(0,Sr.jsx)("a",{href:e.href,className:e.className,children:e.label})},e.id))})})]})};const kr=hr.footer`
   background: var(--primary, #e2e2e2); /* mesma cor do logo (usa variável se existir) */
   color: #fff;
   padding: 0.5rem 1rem;
@@ -189,7 +189,7 @@ li[data-id="conversa"] a:focus {
 `,Er=hr.span`
   color: var(--accent, #0b74de); /* WillDev em azul */
   font-weight: 700;
-`;var $r=()=>{const e=(new Date).getFullYear(),t=[{id:"instagram",Icon:h,href:"https://www.instagram.com/brav.owear/"},{id:"linkedin",Icon:l,href:"https://www.linkedin.com/in/willian-miranda-de-oliveira-7195642ba/"},{id:"whatsapp",Icon:j,href:"https://wa.me/5527997916541"}];return(0,Sr.jsx)(kr,{children:(0,Sr.jsxs)(Ar,{children:[(0,Sr.jsx)(Ir,{src:"/weligton-portfolio/assets/logo-1-ZlNOkMDf.png",alt:"Logo"}),(0,Sr.jsx)(Pr,{"aria-label":"redes sociais",children:t.map(e=>(0,Sr.jsx)("a",{href:e.href,target:"_blank",rel:"noopener noreferrer","aria-label":e.id,title:e.id,children:(0,Sr.jsx)(e.Icon,{size:24})},e.id))}),(0,Sr.jsxs)(zr,{children:["© ",e," Todos os Direitos Reservados a ",(0,Sr.jsx)("strong",{children:"WM Consultoria"}),". Desenvolvido por ",(0,Sr.jsx)(Er,{children:"WillDev"}),"."]})]})})};const Or=hr.div`
+`;var $r=()=>{const e=(new Date).getFullYear(),t=[{id:"instagram",Icon:h,href:"https://www.instagram.com/brav.owear/"},{id:"linkedin",Icon:l,href:"https://www.linkedin.com/in/willian-miranda-de-oliveira-7195642ba/"},{id:"whatsapp",Icon:j,href:"https://wa.me/5527997916541"}];return(0,Sr.jsx)(kr,{children:(0,Sr.jsxs)(Ar,{children:[(0,Sr.jsx)(Ir,{src:"/wm-consultoria/assets/logo-1-ZlNOkMDf.png",alt:"Logo"}),(0,Sr.jsx)(Pr,{"aria-label":"redes sociais",children:t.map(e=>(0,Sr.jsx)("a",{href:e.href,target:"_blank",rel:"noopener noreferrer","aria-label":e.id,title:e.id,children:(0,Sr.jsx)(e.Icon,{size:24})},e.id))}),(0,Sr.jsxs)(zr,{children:["© ",e," Todos os Direitos Reservados a ",(0,Sr.jsx)("strong",{children:"WM Consultoria"}),". Desenvolvido por ",(0,Sr.jsx)(Er,{children:"WillDev"}),"."]})]})})};const Or=hr.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -197,7 +197,7 @@ li[data-id="conversa"] a:focus {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-image: url(${"/weligton-portfolio/assets/fundo-perfil-CW9g-leQ.png"});
+    background-image: url(${"/wm-consultoria/assets/fundo-perfil-CW9g-leQ.png"});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -382,7 +382,7 @@ li[data-id="conversa"] a:focus {
     display: flex;
     position: relative;
     flex-direction: column;
-    background-image: url(${"/weligton-portfolio/assets/perfil-1-3XaBqZAJ.jpeg"});
+    background-image: url(${"/wm-consultoria/assets/perfil-1-3XaBqZAJ.jpeg"});
     background-size: cover;
     background-repeat: no-repeat;
 
