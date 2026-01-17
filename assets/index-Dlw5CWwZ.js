@@ -239,9 +239,12 @@ li[data-id="conversa"] a:focus {
         font-size: 1em;
     }
 `;var Mr=()=>(0,Sr.jsx)(Rr,{id:"inicio",children:(0,Sr.jsx)(Nr,{children:(0,Sr.jsxs)(_r,{children:[(0,Sr.jsx)(Dr,{children:"SOMOS O APOIO ESTRATÉGICO DA SUA EMPRESA"}),(0,Sr.jsx)(Tr,{children:"Redefina o futuro da sua equipe e impulsione para o sucesso. Consultoria Administrativa, Planejamento estratégico, Recrutaento e seleção, Treinamentos, Planos de Cargo e Salários."})]})})});const qr=hr.section`
-  padding: 3rem 6rem 5.5rem 6rem;
+  padding: 4.8rem 3rem;
+  max-width: 1200px;
   margin: 0 auto;
   background-color: #fff;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 `,Fr=hr.h2`
   font-size: 2rem;
@@ -251,20 +254,20 @@ li[data-id="conversa"] a:focus {
 `,Lr=hr.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: 2.1rem;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 764px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 516px) {
     grid-template-columns: 1fr;
   }
 `,Wr=hr.article`
-  background: var(--card-bg, #ffffff87);
+  background: var(--card-bg, #d6d6d680);
   border-radius: 12px;
   padding: 2.85rem;
-  box-shadow: 0 8px 20px rgba(10, 10, 10, 0.2);
+  box-shadow: 0 10px 25px rgba(69, 69, 69, 0.65);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
