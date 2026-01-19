@@ -1,16 +1,111 @@
-# React + Vite
+# WM Consultoria - Portfólio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um portfólio moderno e responsivo desenvolvido para WM Consultoria, showcasing serviços e informações da empresa.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** - Biblioteca JavaScript para construção de interfaces
+- **Vite** - Build tool rápido e moderno
+- **Styled Components** - CSS-in-JS para estilização
+- **Firebase** - Backend-as-a-Service para autenticação e banco de dados
+- **Chart.js** - Biblioteca para visualização de dados
+- **React Bootstrap Icons** - Ícones para interface
+- **ESLint** - Linting para código limpo
 
-## React Compiler
+## 📁 Estrutura do Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+src/
+├── Componentes/          # Componentes reutilizáveis
+├── Paginas/             # Páginas da aplicação
+│   ├── Contatos/        # Página de contato
+│   ├── Inicio/          # Página inicial
+│   ├── Quem-Somos/      # Sobre nós
+│   └── Servicos/        # Serviços
+├── StyleGlobal/         # Estilos globais
+├── assets/              # Assets estáticos
+└── main.jsx            # Ponto de entrada da aplicação
+```
 
-## Expanding the ESLint configuration
+## 🛠️ Instalação e Execução
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Pré-requisitos
+- Node.js (versão 18 ou superior)
+- npm ou yarn
+
+### Passos para instalação
+
+1. Clone o repositório:
+```bash
+git clone <URL-DO-REPOSITORIO>
+cd Projeto-Weligton-portifolio
+```
+
+2. Instale as dependências:
+```bash
+npm install
+```
+
+3. Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+```
+
+4. Abra seu navegador e acesse `http://localhost:5173`
+
+## 📦 Scripts Disponíveis
+
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Build para produção
+- `npm run preview` - Preview do build de produção
+- `npm run lint` - Executa ESLint no código
+- `npm run deploy` - Deploy para GitHub Pages
+- `npm run deploy:force` - Deploy forçado para GitHub Pages
+
+## 🔧 Configuração
+
+### Firebase
+Para configurar o Firebase:
+1. Crie um projeto no [Firebase Console](https://console.firebase.google.com/)
+2. Copie as credenciais para o arquivo de configuração
+3. Configure as regras de segurança conforme necessário
+
+### Deploy
+O projeto está configurado para deploy automático no GitHub Pages através do script `npm run deploy`.
+
+## 🎨 Features
+
+- **Design Responsivo**: Adaptado para desktop, tablet e mobile
+- **Navegação Intuitiva**: Menu de navegação com links para todas seções
+- **Visualização de Dados**: Gráficos interativos com Chart.js
+- **Contato Integrado**: Formulário de contato funcional
+- **Performance Otimizada**: Build otimizado com Vite e Terser
+
+## 📱 Páginas
+
+- **Início**: Apresentação da empresa e principais serviços
+- **Quem Somos**: História e valores da WM Consultoria
+- **Serviços**: Detalhamento dos serviços oferecidos
+- **Contatos**: Informações de contato e formulário
+
+## 🤝 Contribuição
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/NovaFeature`)
+3. Commit suas mudanças (`git commit -m 'Adicionando NovaFeature'`)
+4. Push para a branch (`git push origin feature/NovaFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👨‍💻 Autor
+
+**Weligton Miranda**
+- Desenvolvedor Web
+- WM Consultoria
+
+---
+
+Para suporte ou dúvidas, entre em contato através das informações na página de contatos do site.
