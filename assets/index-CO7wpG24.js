@@ -787,16 +787,16 @@ li[data-id="conversa"] a:focus {
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    background-color: ${e=>e.isActive?"#5561ac":"#ccc"};
+    background-color: ${e=>e.$isActive?"#5561ac":"#ccc"};
     transition: all 0.3s ease;
     
     // TAMANHO: Maior quando ativo
-    ${e=>e.isActive&&"\n        width: 14px;\n        height: 14px;\n        transform: scale(1.2);\n    "}
+    ${e=>e.$isActive&&"\n        width: 14px;\n        height: 14px;\n        transform: scale(1.2);\n    "}
     
     // HOVER: Efeito ao passar o mouse
     &:hover {
-        background-color: ${e=>e.isActive?"#5561ac":"#999"};
-        transform: ${e=>e.isActive?"scale(1.2)":"scale(1.1)"};
+        background-color: ${e=>e.$isActive?"#5561ac":"#999"};
+        transform: ${e=>e.$isActive?"scale(1.2)":"scale(1.1)"};
     }
     
     // FOCUS: Estilo para acessibilidade
@@ -804,7 +804,7 @@ li[data-id="conversa"] a:focus {
         outline: 2px solid #5561ac;
         outline-offset: 2px;
     }
-`;var Ln=()=>{const e=[{id:1,logo:"https://cdn6.f-cdn.com/contestentries/2220272/58801622/640732f63a225_thumb900.jpg"},{id:2,logo:"https://static.vecteezy.com/ti/vetor-gratis/p1/19073761-unidade-de-logotipo-da-matriz-logotipo-do-nome-da-empresa-ficticia-da-matriz-gratis-vetor.jpg"},{id:3,logo:"https://thumbs.dreamstime.com/b/airmail-arte-vetorial-de-logotipo-empresa-fict%C3%ADcia-uma-ficcional-com-um-s%C3%ADmbolo-avi%C3%A3o-em-papel-ilustra%C3%A7%C3%A3o-para-empresas-e-180612818.jpg"},{id:4,logo:"https://thumbs.dreamstime.com/b/airmail-arte-vetorial-de-logotipo-empresa-fict%C3%ADcia-uma-ficcional-com-um-s%C3%ADmbolo-avi%C3%A3o-em-papel-ilustra%C3%A7%C3%A3o-para-empresas-e-180612571.jpg"},{id:5,logo:"https://turbologo.com/articles/wp-content/uploads/2019/08/Bank-of-America-logo.png"},{id:6,logo:"https://img.freepik.com/vetores-premium/logo-ficticio-una-buena-idea_471774-60.jpg"},{id:7,logo:"https://static.vecteezy.com/ti/vetor-gratis/p1/9032499-fic-logo-fic-letter-fic-letter-logo-design-initials-fic-logo-linked-with-circle-and-uppercase-monogram-logo-fic-typography-for-technology-business-and-real-marca-imobiliaria-vetor.jpg   "}],t=(0,ze.useRef)(null),r=[...e,...e],[n,a]=(0,ze.useState)(0),[i,s]=(0,ze.useState)(!0);(0,ze.useEffect)(()=>{if(!i)return;const t=setInterval(()=>{a(t=>t>=e.length?0:t+1)},3e3);return()=>clearInterval(t)},[e.length,i]);const c=()=>{setTimeout(()=>s(!0),5e3)};return(0,Sr.jsxs)(En,{children:[(0,Sr.jsx)($n,{children:"Quem Já Tem Conexão Com Weligton"}),(0,Sr.jsx)(On,{children:"Nossos Clientes e Parceiros"}),(0,Sr.jsxs)(Rn,{children:[(0,Sr.jsx)(Nn,{direction:"left",onClick:()=>{s(!1),a(t=>t<=0?e.length-1:t-1)},onMouseUp:c,"aria-label":"Slide anterior",children:(0,Sr.jsx)(C,{size:24})}),(0,Sr.jsx)(_n,{ref:t,children:(0,Sr.jsx)(Dn,{position:n,children:r.map((e,t)=>(0,Sr.jsx)(Tn,{children:(0,Sr.jsx)(Mn,{src:e.logo,alt:`Cliente ${e.id}`})},`${e.id}-${t}`))})}),(0,Sr.jsx)(Nn,{direction:"right",onClick:()=>{s(!1),a(t=>t>=e.length-1?0:t+1)},onMouseUp:c,"aria-label":"Próximo slide",children:(0,Sr.jsx)(o,{size:24})})]}),(0,Sr.jsx)(qn,{children:e.map((e,t)=>(0,Sr.jsx)(Fn,{isActive:t===n,onClick:()=>{a(t),s(!1),c()},"aria-label":`Ir para slide ${t+1}`},t))})]})};const Wn=hr.div`
+`;var Ln=()=>{const e=[{id:1,logo:"https://cdn6.f-cdn.com/contestentries/2220272/58801622/640732f63a225_thumb900.jpg"},{id:2,logo:"https://static.vecteezy.com/ti/vetor-gratis/p1/19073761-unidade-de-logotipo-da-matriz-logotipo-do-nome-da-empresa-ficticia-da-matriz-gratis-vetor.jpg"},{id:3,logo:"https://thumbs.dreamstime.com/b/airmail-arte-vetorial-de-logotipo-empresa-fict%C3%ADcia-uma-ficcional-com-um-s%C3%ADmbolo-avi%C3%A3o-em-papel-ilustra%C3%A7%C3%A3o-para-empresas-e-180612818.jpg"},{id:4,logo:"https://thumbs.dreamstime.com/b/airmail-arte-vetorial-de-logotipo-empresa-fict%C3%ADcia-uma-ficcional-com-um-s%C3%ADmbolo-avi%C3%A3o-em-papel-ilustra%C3%A7%C3%A3o-para-empresas-e-180612571.jpg"},{id:5,logo:"https://turbologo.com/articles/wp-content/uploads/2019/08/Bank-of-America-logo.png"},{id:6,logo:"https://img.freepik.com/vetores-premium/logo-ficticio-una-buena-idea_471774-60.jpg"},{id:7,logo:"https://static.vecteezy.com/ti/vetor-gratis/p1/9032499-fic-logo-fic-letter-fic-letter-logo-design-initials-fic-logo-linked-with-circle-and-uppercase-monogram-logo-fic-typography-for-technology-business-and-real-marca-imobiliaria-vetor.jpg   "}],t=(0,ze.useRef)(null),r=[...e,...e],[n,a]=(0,ze.useState)(0),[i,s]=(0,ze.useState)(!0);(0,ze.useEffect)(()=>{if(!i)return;const t=setInterval(()=>{a(t=>t>=e.length?0:t+1)},3e3);return()=>clearInterval(t)},[e.length,i]);const c=()=>{setTimeout(()=>s(!0),5e3)};return(0,Sr.jsxs)(En,{children:[(0,Sr.jsx)($n,{children:"Quem Já Tem Conexão Com Weligton"}),(0,Sr.jsx)(On,{children:"Nossos Clientes e Parceiros"}),(0,Sr.jsxs)(Rn,{children:[(0,Sr.jsx)(Nn,{direction:"left",onClick:()=>{s(!1),a(t=>t<=0?e.length-1:t-1)},onMouseUp:c,"aria-label":"Slide anterior",children:(0,Sr.jsx)(C,{size:24})}),(0,Sr.jsx)(_n,{ref:t,children:(0,Sr.jsx)(Dn,{position:n,children:r.map((e,t)=>(0,Sr.jsx)(Tn,{children:(0,Sr.jsx)(Mn,{src:e.logo,alt:`Cliente ${e.id}`})},`${e.id}-${t}`))})}),(0,Sr.jsx)(Nn,{direction:"right",onClick:()=>{s(!1),a(t=>t>=e.length-1?0:t+1)},onMouseUp:c,"aria-label":"Próximo slide",children:(0,Sr.jsx)(o,{size:24})})]}),(0,Sr.jsx)(qn,{children:e.map((e,t)=>(0,Sr.jsx)(Fn,{"data-isactive":t===n,$isActive:t===n,onClick:()=>{a(t),s(!1),c()},"aria-label":`Ir para slide ${t+1}`},t))})]})};const Wn=hr.div`
     padding: 40px 20px;
     background-color: #5561ac;
     color: #fff;
