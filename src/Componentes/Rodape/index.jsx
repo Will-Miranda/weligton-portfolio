@@ -30,7 +30,7 @@ const Rodape = () => {
                 </a>
             ))}
         </S.SocialIcons>
-        <S.Copyright>© {anoAtual} Todos os Direitos Reservados a <strong>Weligton Consultoria</strong>.
+        <S.Copyright>© {anoAtual} Todos os Direitos Reservados a <strong>WM Consultoria</strong>.
         Desenvolvido por <S.Developer>WillDev</S.Developer>.</S.Copyright>
       </S.Container>
     </S.Footer>

@@ -1,6 +1,7 @@
 import React from 'react';
 import * as S from './style';
 import { Whatsapp } from 'react-bootstrap-icons';
+import { dadosFormulario, dadosContato } from '../../data';
 
 const Formulario = () => {
   const handleSubmit = (e) => {
@@ -10,70 +11,62 @@ const Formulario = () => {
     const email = formData.get('email');
     const message = formData.get('message');
     
-    // Montar mensagem formatada para WhatsApp
     const whatsappMessage = `Novo contato pelo site\n\nNome: ${name}\nEmail: ${email}\nMensagem:\n${message}`;
+    const whatsappUrl = `https://wa.me/${dadosContato.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
     
-    // Construir URL do WhatsApp com mensagem codificada
-    const whatsappUrl = `https://wa.me/5527997916541?text=${encodeURIComponent(whatsappMessage)}`;
-    
-    // Abrir WhatsApp em nova aba
     window.open(whatsappUrl, '_blank');
   };
 
+  const renderField = (field) => {
+    if (field.type === 'textarea') {
+      return (
+        <S.Field key={field.id}>
+          <S.Label htmlFor={field.id}>{field.label}</S.Label>
+          <S.Textarea 
+            id={field.id} 
+            name={field.id}
+            rows={field.rows}
+            placeholder={field.placeholder}
+            required
+            aria-describedby={`${field.id}-help`}
+          />
+          <S.HelpText id={`${field.id}-help`}>{field.helpText}</S.HelpText>
+        </S.Field>
+      );
+    }
+
+    return (
+      <S.Field key={field.id}>
+        <S.Label htmlFor={field.id}>{field.label}</S.Label>
+        <S.Input 
+          id={field.id} 
+          name={field.id}
+          type={field.type} 
+          placeholder={field.placeholder} 
+          required 
+          aria-describedby={`${field.id}-help`}
+        />
+        <S.HelpText id={`${field.id}-help`}>{field.helpText}</S.HelpText>
+      </S.Field>
+    );
+  };
+
   return (
-    <S.Section id="contato">
+    <S.Section id={dadosFormulario.id}>
       <S.Container>
         <S.Left>
-          <S.Title>Como Podemos te Ajudar</S.Title>
+          <S.Title>{dadosFormulario.titulo}</S.Title>
         </S.Left>
 
         <S.Right>
           <S.Form onSubmit={handleSubmit}>
-            <S.Field>
-              <S.Label htmlFor="name">Nome:</S.Label>
-              <S.Input 
-                id="name" 
-                name="name"
-                type="text" 
-                placeholder="Seu nome" 
-                required 
-                aria-describedby="name-help"
-              />
-              <S.HelpText id="name-help">Seu nome para identificação</S.HelpText>
-            </S.Field>
+            {dadosFormulario.campos.map(renderField)}
 
-            <S.Field>
-              <S.Label htmlFor="email">E-mail:</S.Label>
-              <S.Input 
-                id="email" 
-                name="email"
-                type="email" 
-                placeholder="seu@email.com" 
-                required 
-                aria-describedby="email-help"
-              />
-              <S.HelpText id="email-help">Seu e-mail será usado apenas para resposta</S.HelpText>
-            </S.Field>
-
-            <S.Field>
-              <S.Label htmlFor="message">Mensagem:</S.Label>
-              <S.Textarea 
-                id="message" 
-                name="message"
-                rows={5} 
-                placeholder="Digite sua mensagem aqui..."
-                required
-                aria-describedby="message-help"
-              />
-              <S.HelpText id="message-help">Descreva como podemos ajudar você</S.HelpText>
-            </S.Field>
-
-            <S.Button 
-            type="submit">Enviar Mensagem</S.Button>
+            <S.Button type="submit">{dadosFormulario.botaoTexto}</S.Button>
           </S.Form>
 
           <S.WhatsappLink 
-            href="https://wa.me/5527997916541" 
+            href={`https://wa.me/${dadosContato.whatsapp}`} 
             target="_blank" 
             rel="noopener noreferrer"
             aria-label="Contato via WhatsApp"

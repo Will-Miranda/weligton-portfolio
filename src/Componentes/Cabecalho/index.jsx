@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Container, Logo, NavItens, MenuButton, NavList } from "./style";
 import LogoSrc from "../../assets/logo.png";
+import { dadosCabecalho } from '../../data';
 
 const Cabecalho = ({ items = null, logoSrc = LogoSrc }) => {
-    const defaultItems = [
-        { id: 'inicio', label: 'Início', href: '#inicio' },
-        { id: 'sobre', label: 'Sobre', href: '#sobre' },
-        { id: 'servicos', label: 'Serviços', href: '#servicos' },
-        { id: 'contato', label: 'Contato', href: '#contato' },
-        { id: 'conversa', label: 'Conversar com Consultor', href: '#conversa', className: 'consultor' }
-    ];
-
-    const navItems = items || defaultItems;
+    const navItems = items || dadosCabecalho;
     const [open, setOpen] = useState(false);
 
     useEffect(() => {

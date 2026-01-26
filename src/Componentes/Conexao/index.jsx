@@ -1,95 +1,124 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import * as S from './style';
 import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
+import { dadosClientes, dadosConexao } from '../../data';
 
-const Conexão = () => {
-
-    const clientes = [
-        {
-            id: 1,
-            nome: "Empresa A",
-            logo: "https://cdn6.f-cdn.com/contestentries/2220272/58801622/640732f63a225_thumb900.jpg"
-        },
-        {
-            id: 2,
-            nome: "Empresa B",
-            logo: "https://static.vecteezy.com/ti/vetor-gratis/p1/19073761-unidade-de-logotipo-da-matriz-logotipo-do-nome-da-empresa-ficticia-da-matriz-gratis-vetor.jpg"
-        },
-        {
-            id: 3,
-            nome: "Empresa C",
-            logo: "https://thumbs.dreamstime.com/b/airmail-arte-vetorial-de-logotipo-empresa-fict%C3%ADcia-uma-ficcional-com-um-s%C3%ADmbolo-avi%C3%A3o-em-papel-ilustra%C3%A7%C3%A3o-para-empresas-e-180612818.jpg"
-        },
-        {
-            id: 4,
-            nome: "Empresa D",
-            logo: "https://thumbs.dreamstime.com/b/airmail-arte-vetorial-de-logotipo-empresa-fict%C3%ADcia-uma-ficcional-com-um-s%C3%ADmbolo-avi%C3%A3o-em-papel-ilustra%C3%A7%C3%A3o-para-empresas-e-180612571.jpg" 
-        },
-        {
-            id: 5,
-            nome: "Empresa E",
-            logo: "https://turbologo.com/articles/wp-content/uploads/2019/08/Bank-of-America-logo.png"
-        },
-        {
-            id: 6,
-            nome: "Empresa F",
-            logo: "https://img.freepik.com/vetores-premium/logo-ficticio-una-buena-idea_471774-60.jpg"
-        },
-        {
-            id: 7,
-            nome: "Empresa G",
-            logo: "https://static.vecteezy.com/ti/vetor-gratis/p1/9032499-fic-logo-fic-letter-fic-letter-logo-design-initials-fic-logo-linked-with-circle-and-uppercase-monogram-logo-fic-typography-for-technology-business-and-real-marca-imobiliaria-vetor.jpg   "
-        }
-    ]
-
-    const [currentIndex, setCurrentIndex] = useState(0);
-
+const Conexao = () => {
+    // REF: Referência para o container do carrossel
+    const carouselRef = useRef(null);
+    
+    // DUPLICAÇÃO: Array duplicado para criar efeito infinito
+    const duplicatedClientes = [...dadosClientes, ...dadosClientes];
+    
+    // ESTADO: Controla a posição atual do carrossel
+    const [position, setPosition] = useState(0);
+    
+    // ESTADO: Controla se a animação automática está ativa
+    const [isAutoPlay, setIsAutoPlay] = useState(true);
+    
+    // EFEITO: Animação automática do carrossel
+    useEffect(() => {
+        // Só executa se o autoplay estiver ativo
+        if (!isAutoPlay) return;
+        
+        const interval = setInterval(() => {
+            setPosition((prevPosition) => {
+                // Reset para início quando atingir o final do array original
+                if (prevPosition >= dadosClientes.length) {
+                    return 0;
+                }
+                return prevPosition + 1;
+            });
+        }, 3000); // Velocidade da animação: 3 segundos
+        
+        // LIMPEZA: Remove o intervalo quando o componente desmonta
+        return () => clearInterval(interval);
+    }, [isAutoPlay]);
+    
+    // FUNÇÃO: Navegação para o slide anterior
     const handlePrev = () => {
-        setCurrentIndex((prevIndex) => 
-            prevIndex === 0 ? clientes.length - 1 : prevIndex - 1
-        );
+        setIsAutoPlay(false); // Pausa autoplay ao navegar manualmente
+        setPosition((prevPosition) => {
+            // Volta para o final se estiver no início
+            if (prevPosition <= 0) {
+                return dadosClientes.length - 1;
+            }
+            return prevPosition - 1;
+        });
     }
-
+    
+    // FUNÇÃO: Navegação para o próximo slide
     const handleNext = () => {
-        setCurrentIndex((prevIndex) => 
-            prevIndex === clientes.length - 1 ? 0 : prevIndex + 1
-        );
+        setIsAutoPlay(false); // Pausa autoplay ao navegar manualmente
+        setPosition((prevPosition) => {
+            // Reset para início se atingir o final
+            if (prevPosition >= dadosClientes.length - 1) {
+                return 0;
+            }
+            return prevPosition + 1;
+        });
     }
-
-    const getCardIndex = (offset) => (currentIndex + offset) % clientes.length;
+    
+    // FUNÇÃO: Retoma o autoplay após interação manual
+    const resumeAutoPlay = () => {
+        setTimeout(() => setIsAutoPlay(true), 5000); // Retoma após 5 segundos
+    }
 
     return (
         <S.Container>
-            <S.Title>Quem Já Tem Conexão Com Weligton</S.Title>
-            <S.Description>Nossos Clientes e Parceiros</S.Description>
+            {/* TÍTULO: Cabeçalho principal do componente */}
+            <S.Title>{dadosConexao.titulo}</S.Title>
+            <S.Description>{dadosConexao.descricao}</S.Description>
 
-            <S.CarouselWrapper>
-                <S.CarouselButton onClick={handlePrev} aria-label="Anterior">
+            {/* CARROSSEL: Container principal com indicadores e conteúdo */}
+            <S.CarouselContainer>
+                {/* BOTÃO ANTERIOR: Navegação para esquerda */}
+                <S.NavButton 
+                    direction="left" 
+                    onClick={handlePrev}
+                    onMouseUp={resumeAutoPlay}
+                    aria-label="Slide anterior"
+                >
                     <ChevronLeft size={24} />
-                </S.CarouselButton>
+                </S.NavButton>
 
-                <S.CarouselContent>
-                    {[0,1,2,3,4].map((offset) => (
-                        <S.Card key={offset}>
-                            <S.Logo src={clientes[getCardIndex(offset)].logo} alt={clientes[getCardIndex(offset)].nome} />
-                            <S.CardName>{clientes[getCardIndex(offset)].nome}</S.CardName>
-                        </S.Card>
+                {/* CARROSSEL INFINITO: Área de exibição dos logos */}
+                <S.InfiniteCarousel ref={carouselRef}>
+                    <S.CarouselTrack position={position}>
+                        {/* MAPEAMENTO: Renderiza todos os logos duplicados */}
+                        {duplicatedClientes.map((cliente, index) => (
+                            <S.Card key={`${cliente.id}-${index}`}>
+                                <S.Logo src={cliente.logo} alt={`Cliente ${cliente.id}`} />
+                            </S.Card>
+                        ))}
+                    </S.CarouselTrack>
+                </S.InfiniteCarousel>
 
-                    ))}
-                </S.CarouselContent>
-
-                <S.CarouselButton onClick={handleNext} aria-label="Próximo" >
+                {/* BOTÃO PRÓXIMO: Navegação para direita */}
+                <S.NavButton 
+                    direction="right" 
+                    onClick={handleNext}
+                    onMouseUp={resumeAutoPlay}
+                    aria-label="Próximo slide"
+                >
                     <ChevronRight size={24} />
-                </S.CarouselButton>
-            </S.CarouselWrapper>
+                </S.NavButton>
+            </S.CarouselContainer>
 
+            {/* INDICADORES: Pontos indicadores de posição */}
             <S.Indicators>
-                {clientes.map((_, index) => (
+                {/* MAPEAMENTO: Renderiza indicadores para cada cliente */}
+                {dadosClientes.map((_, index) => (
                     <S.Dot
                         key={index}
-                        isActive={index === currentIndex}
-                        onClick={() => setCurrentIndex(index)}
-                        aria-label={`Ir para o cliente ${index + 1}`} 
+                        data-isactive={index === position}
+                        $isActive={index === position}
+                        onClick={() => {
+                            setPosition(index);
+                            setIsAutoPlay(false);
+                            resumeAutoPlay();
+                        }}
+                        aria-label={`Ir para slide ${index + 1}`}
                     />
                 ))}
             </S.Indicators>
@@ -97,4 +126,4 @@ const Conexão = () => {
     )
 }
 
-export default Conexão;
+export default Conexao;

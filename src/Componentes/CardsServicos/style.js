@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  padding: 3rem 6rem 5.5rem 6rem;
+  padding: 4.8rem 3rem;
+  max-width: 1200px;
   margin: 0 auto;
   background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 `;
 
 export const Title = styled.h2`
@@ -16,22 +20,22 @@ export const Title = styled.h2`
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: 2.1rem;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 764px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 516px) {
     grid-template-columns: 1fr;
   }
 `;
 
 export const Card = styled.article`
-  background: var(--card-bg, #ffffff87);
+  background: var(--card-bg, #d6d6d680);
   border-radius: 12px;
   padding: 2.85rem;
-  box-shadow: 0 8px 20px rgba(10, 10, 10, 0.2);
+  box-shadow: 0 10px 25px rgba(69, 69, 69, 0.65);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;

@@ -16,6 +16,8 @@ export const SectionPresentation = styled.section`
     display: flex;
     text-align: center;
     align-items: center;
+    justify-content: center;
+
 `
 
 export const Content = styled.div`
@@ -27,6 +29,10 @@ export const Content = styled.div`
     gap: 12px;
     color: #000;
 
+    @media (max-width: 768px) {
+        margin-right: 0;
+        padding: 2rem;
+    }
 `;
 
 export const Title = styled.h3`

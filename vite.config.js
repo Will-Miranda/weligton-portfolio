@@ -29,5 +29,5 @@ export default defineConfig({
     },
     chunkSizeWarningLimit: 1000,
   },
-  base: '/weligton-portfolio/',
+  base: '/wm-consultoria/',
 })

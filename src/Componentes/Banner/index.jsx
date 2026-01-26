@@ -1,21 +1,19 @@
 import React from "react";
 import * as S from "./style";
+import { dadosBanner } from '../../data';
 
 const Banner = () => {
     return (
-        <S.Container>
+        <S.Container id={dadosBanner.id}>
 
             {/* Seção de apresentação */}
             <S.SectionPresentation>
 
                 <S.Content>
-                    <S.Title>SOMOS O APOIO ESTRATÉGICO DA SUA EMPRESA</S.Title>
+                    <S.Title>{dadosBanner.titulo}</S.Title>
                     
                     <S.Text>
-                        Redefina o futuro da sua equipe e impulsione para o sucesso.
-                        Consultoria Administrativa e RH, Planejamento estratégico, Recrutaento e seleção,
-                        Treinamentos, Planos de Cargo e Salários, Terceirização de RH e
-                        muito mais.
+                        {dadosBanner.texto}
                     </S.Text>
                 </S.Content>
             </S.SectionPresentation>
